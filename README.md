@@ -18,7 +18,7 @@ from PyPDF2 import PdfFileReader,PdfFileWriter
 1. 完整下载封面、版权页、前言页、目录页等，合成为完整的书籍PDF；
 2. 与官方pdg下载同等的最高画质；
 3. 顺带下载了目录，并妥当地嵌入到了PDF书签中。
-![snipaste_20220420_210448](https://user-images.githubusercontent.com/74524914/164236903-35b9efff-f224-4ea5-b575-351e6080ee9f.jpg)
+![snipaste_20220420_212157](https://user-images.githubusercontent.com/74524914/164239989-9b3190d7-0233-45c5-9287-38d1c6be6b0f.jpg)
 
 # 设置
 主要能进行清晰度和下载间隔的设置：
