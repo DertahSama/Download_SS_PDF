@@ -1,5 +1,5 @@
 # Download_SS_PDF
-这是一个从超星图书馆下载PDF并且自动添加目录的python脚本。鉴于大概没有外国友人用，所以no English。
+这是一个从超星图书馆（http://www.sslibrary.com ）下载PDF并且自动添加目录的python脚本。鉴于大概没有外国友人用，所以no English。
 
 本脚本由本刚刚学会python的菜鸟一边google一边编写出来，当然不能突破超星图书馆的版权限制，原理只是网页爬虫，只能省去阁下按几百次右键保存图片的时间。
 
