@@ -23,7 +23,7 @@ from PyPDF2 import PdfFileReader,PdfFileWriter
 # 设置
 主要能进行清晰度和下载间隔的设置：
 1. 清晰度`zoom`：超星的最高分辨率图即为`zoom=3`，但是代价是总是去色的；如果想下载彩色书籍而保留颜色，可更改到`zoom=2`。
-2. 下载间隔`interval`:下太快会被ban的！所以默认每下一页停1s，即`interval=1`。
+2. 下载间隔`interval`:下太快会被ban的！所以默认`interval=1`，即每下一页停1s，因此下载速度略慢。若阁下对自己的ip有信心可以改短一点。
 
 # Credit
 本脚本受到https://github.com/0NG/sslibrary-pdf-downloader 的启发而编写，补完了前辈计划做而没有做完的工作。
