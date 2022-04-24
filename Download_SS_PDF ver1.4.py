@@ -170,9 +170,9 @@ def AddContents(pdf_out,type_dict,contents_xml):
     print("\n添加目录……")
     parent_id=[0, 0, 0, 0]
     parent_id[0]=pdf_out.addBookmark("封面",0,parent=None)
-    parent_id[0]=pdf_out.addBookmark("版权页",0+type_dict['bok']+type_dict['cov']-1,parent=None)
-    parent_id[0]=pdf_out.addBookmark("前言",0+type_dict['bok']+type_dict['cov']+type_dict['leg']-1,parent=None)
-    parent_id[0]=pdf_out.addBookmark("目录",0+type_dict['bok']+type_dict['cov']+type_dict['leg']+type_dict['fow']-1,parent=None)
+    parent_id[0]=pdf_out.addBookmark("版权页",0+type_dict['bok']+type_dict['cov'],parent=None)
+    parent_id[0]=pdf_out.addBookmark("前言",0+type_dict['bok']+type_dict['cov']+type_dict['leg'],parent=None)
+    parent_id[0]=pdf_out.addBookmark("目录",0+type_dict['bok']+type_dict['cov']+type_dict['leg']+type_dict['fow'],parent=None)
     offset=sum(type_dict.values())-type_dict['000']   #xml里的页码是从正文开始的，所以与pdf页码有个偏移
     for match in re.finditer(r'id=.*?InsertPageNumber',contents_xml):   #提取一条目录数据
         index=re.search(r'id="(.*?)"',match.group()).group(1)
