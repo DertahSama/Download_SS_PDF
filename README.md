@@ -28,10 +28,8 @@ pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python
 2. 与官方pdz下载同等的最高画质；
 3. 顺带下载了目录，并妥当地嵌入到了PDF书签中；
 ![snipaste_20220420_212157](https://user-images.githubusercontent.com/74524914/164239989-9b3190d7-0233-45c5-9287-38d1c6be6b0f.jpg)
-4. （ver1.2 new!）可以将下载的PDF压缩为纯黑白，可大大减小体积。
-
-![snipaste_20220424_153741](https://user-images.githubusercontent.com/74524914/164965640-20f0523c-570c-4f1f-88bb-e81bc4aa5885.jpg)
-
+4. （ver1.2 new!）可以将下载的PDF压缩为纯黑白，可在保持清晰度情况下可大大减小体积。\
+![snipaste_20220424_160835](https://user-images.githubusercontent.com/74524914/164966759-0ac8003f-34f3-4fef-98a5-6dec0b71f79f.jpg)
 
 # 设置
 主要能进行清晰度和下载间隔的设置：
