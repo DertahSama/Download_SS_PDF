@@ -8,13 +8,15 @@
 # 环境与用法
 环境为python 3.x，需要的模块如下：
 ```python
-import requests,time,os,shutil,img2pdf,sys,re
+import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2
 from PyPDF2 import PdfFileReader,PdfFileWriter
+from PIL import Image
+from io import BytesIO
 ```
 
 如果阁下是完全不会python的新人，要使用，只需下载一个Visual Studio Code，安装python扩展，然后打开python所在的目录（大概在\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\之类的地方），在Script文件夹上按住Shift地右键→在此处打开Powershell窗口，然后运行以下命令：
 ```
-pip3 install requests PyPDF2 Pillow img2pdf
+pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python
 ```
 然后用VS code打开本脚本运行即可。
 
@@ -23,14 +25,24 @@ pip3 install requests PyPDF2 Pillow img2pdf
 
 # 优点
 1. 完整下载封面、版权页、前言页、目录页等，合成为完整的书籍PDF；
-2. 与官方pdg下载同等的最高画质；
-3. 顺带下载了目录，并妥当地嵌入到了PDF书签中。
+2. 与官方pdz下载同等的最高画质；
+3. 顺带下载了目录，并妥当地嵌入到了PDF书签中；
 ![snipaste_20220420_212157](https://user-images.githubusercontent.com/74524914/164239989-9b3190d7-0233-45c5-9287-38d1c6be6b0f.jpg)
+4. （ver1.2 new!）可以将下载的PDF压缩为纯黑白，可大大减小体积。
+
+![snipaste_20220424_153741](https://user-images.githubusercontent.com/74524914/164965640-20f0523c-570c-4f1f-88bb-e81bc4aa5885.jpg)
+
 
 # 设置
 主要能进行清晰度和下载间隔的设置：
 1. 清晰度`zoom`：超星的最高分辨率图即为`zoom=3`，但是代价是总是去色的；如果想下载彩色书籍而保留颜色，可更改到`zoom=2`。
 2. 下载间隔`interval`:下太快会被ban的！所以默认`interval=1`，即每下一页停1s，因此下载速度略慢。若阁下对自己的ip有信心可以改短一点。
+
+# 更新历史
+- 2022年4月21日 19:30:35 ver1.1 加入了不良页面的诊断&重下载功能
+- 2022年4月22日 16:10:35 ver1.2 加入了压缩为纯黑白PDF的功能，可大大减小体积
+- 2022年4月22日 18:30:23 ver1.3 优化了下不良页面的诊断&重下载功能，但实在下不了我也没办法了
+- 2022年4月24日 15:28:26 ver1.4 优化了一点细节
 
 # Credit
 本脚本受到https://github.com/0NG/sslibrary-pdf-downloader 的启发而编写，补完了前辈计划做而没有做完的工作。
