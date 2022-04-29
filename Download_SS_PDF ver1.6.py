@@ -201,9 +201,6 @@ def WritePDF(pdf_name,files_to_save,type_dict, contents_xml):
 
 
 def main():
-    # 获取信息
-    [bookname, img_url_head, type_dict, contents_xml]=GetData()
-
     #一点准备工作
     if os.path.exists('./RAW'):    #清空存下载数据的RAW文件夹
         shutil.rmtree('./RAW')
@@ -216,6 +213,9 @@ def main():
     # 【注意！】为了避免访问太快被ban，应当设置一个下载间隔时间，单位秒
     interval=1
 
+    # 获取信息
+    [bookname, img_url_head, type_dict, contents_xml]=GetData()
+    
     #下载每页图片
     Download(img_url_head, type_dict, Zoom, interval)
     
