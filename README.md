@@ -8,7 +8,7 @@
 # 环境与用法
 环境为python 3.x，需要的模块如下：
 ```python
-import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2
+import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2,glob
 from PyPDF2 import PdfFileReader,PdfFileWriter
 from PIL import Image
 from io import BytesIO
@@ -16,7 +16,7 @@ from io import BytesIO
 
 如果阁下是完全不会python的新人，要使用，只需下载一个Visual Studio Code，安装python扩展，然后打开python所在的目录（大概在\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\之类的地方），在Script文件夹上按住Shift地右键→在此处打开Powershell窗口，然后运行以下命令：
 ```
-pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python
+pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python glob
 ```
 然后用VS code打开本脚本运行即可。
 
@@ -28,7 +28,7 @@ pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python
 2. 与官方pdz下载同等的最高画质；
 3. 顺带下载了目录，并妥当地嵌入到了PDF书签中；
 ![snipaste_20220420_212157](https://user-images.githubusercontent.com/74524914/164239989-9b3190d7-0233-45c5-9287-38d1c6be6b0f.jpg)
-4. （ver1.2 new!）可以将下载的PDF压缩为纯黑白，可在保持清晰度情况下可大大减小体积。\
+4. （ver1.2 new!）可以将下载的PDF压缩为纯黑白，可在保持清晰度情况下可大大减小体积。ver1.6进一步提高了压缩的效率。\
 ![snipaste_20220424_160835](https://user-images.githubusercontent.com/74524914/164966759-0ac8003f-34f3-4fef-98a5-6dec0b71f79f.jpg)
 
 # 设置
@@ -41,6 +41,7 @@ pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python
 - 2022年4月22日 16:10:35 ver1.2 加入了压缩为纯黑白PDF的功能，可大大减小体积
 - 2022年4月22日 18:30:23 ver1.3 优化了下不良页面的诊断&重下载功能，但实在下不了我也没办法了
 - 2022年4月24日 15:28:26 ver1.4 优化了一点细节
-
+- 2022年4月28日 21:07:23 ver1.5 调整架构，原来img2pdf是可以一次转换一整个目录的图片的，可提高一点效率
+- 2022年4月29日 18:35:56 ver1.6 进一步提高纯黑白压缩效率，现在体积大概可以÷15
 # Credit
 本脚本受到https://github.com/0NG/sslibrary-pdf-downloader 的启发而编写，补完了前辈计划做而没有做完的工作。
