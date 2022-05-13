@@ -6,6 +6,7 @@
 # 2022年4月24日 15:28:26 ver1.4 优化了一点细节
 # 2022年4月28日 21:07:23 ver1.5 调整架构，原来img2pdf是可以一次转换一整个目录的图片的，可提高一点效率
 # 2022年4月29日 18:35:56 ver1.6 我终于知道怎么怎么压到ccitt tiff了，tmd一句话我找了一个礼拜
+# 2022年5月13日 12:58:40 ver1.6.1 @v1nh1shungry 指出glob得到的列表不一定是排好序的，于是加了个sorted()保证排序
 
 import requests,time,os,shutil,img2pdf,sys,re,cv2,glob
 from PyPDF2 import PdfFileReader,PdfFileWriter
@@ -191,7 +192,7 @@ def Compress(type_dict):
 def WritePDF(pdf_name,files_to_save,type_dict, contents_xml):
     print("合成……",end="")
     with open("temp.pdf", "wb+") as pdf_temp:
-        pdf_temp.write(img2pdf.convert(glob.glob(files_to_save)))   #合成pdf
+        pdf_temp.write(img2pdf.convert(sorted(glob.glob(files_to_save))))   #合成pdf，用sorted保证排序
         with open(pdf_name, "wb+") as pdf_file:
             pdf_out=AddContents(pdf_temp, type_dict, contents_xml)    #加目录
             pdf_out.write(pdf_file)                                     #输出 
