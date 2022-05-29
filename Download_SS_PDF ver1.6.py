@@ -7,6 +7,7 @@
 # 2022年4月28日 21:07:23 ver1.5 调整架构，原来img2pdf是可以一次转换一整个目录的图片的，可提高一点效率
 # 2022年4月29日 18:35:56 ver1.6 我终于知道怎么怎么压到ccitt tiff了，tmd一句话我找了一个礼拜
 # 2022年5月13日 12:58:40 ver1.6.1 @v1nh1shungry 指出glob得到的列表不一定是排好序的，于是加了个sorted()保证排序
+# 2022年5月29日 14:49:29 ver1.6.2 更新了关于新式阅读器的报错说明
 
 import requests,time,os,shutil,img2pdf,sys,re,cv2,glob
 from PyPDF2 import PdfFileReader,PdfFileWriter
@@ -23,6 +24,8 @@ def ProgressBar(now,alls):
 
 def GetData():
     url=input("输入阅读页面网址（页面不要关）：")
+    if "ssj.sslibrary.com" in url:
+        raise Exception("本脚不能处理ssj.sslibrary.com打头的新式阅读器！请参考使用说明中给出的解决办法。")
     print("开始获取信息……")
 
     resp=requests.get(url).text
