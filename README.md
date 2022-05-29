@@ -29,6 +29,12 @@ pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python glob
 但是就算是这些新书，超星也依旧做了旧式扫描版，阁下可以访问读秀（ https://book.duxiu.com ），这里同时提供了新式阅读器（「书世界」）和旧式阅读器（「汇雅电子书」）的进入链接，**阁下进这个「汇雅电子书」的页面，就是本脚本能处理的页面了** 。
 ![snipaste_20220529_132917](https://user-images.githubusercontent.com/74524914/170854051-955d4fcb-0d98-447b-9159-c5bcc2c5d65f.jpg)
 
+另一种方法是，在超星图书馆自己的搜索页面里，「PDF阅读」的网址复制出来会是这样的：\
+`https://www.sslibrary.com/reader/pdf/pdfreader?ssid=...`
+
+在只要把这里面的两个`pdf`改成`jpath`，就能进入旧式阅读器了：\
+`https://www.sslibrary.com/reader/jpath/jpathreader?ssid=...`
+
 页面清晰度嘛自然是比不上原生电子版的……但是……又不是不能用对吧……(；´д｀)ゞ
 
 ## 优点
