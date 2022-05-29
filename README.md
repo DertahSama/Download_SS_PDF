@@ -23,6 +23,14 @@ pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python glob
 用法非常简单：只需在超星网页打开一本书，复制阅读界面的网址进命令行，回车，然后等它下载就可以了。
 ![snipaste_20220420_205402](https://user-images.githubusercontent.com/74524914/164235308-4b62c5e9-475e-4400-b53b-69bb32fad3c6.png)
 
+## 请注意！
+本脚本只能处理 img.sslibrary.com 开头的旧式阅读器页面，而近几年新出版的书有些提供了原生电子版pdf，用的是 ssj.sslibrary.com 开头的新式阅读器：由于这种新式阅读器每页不再是图片了，所以 **ssj.sslibrary.com 开头的新式阅读器是本脚本处理不了的** ！
+
+但是就算是这些新书，超星也依旧做了旧式扫描版，阁下可以访问读秀（ https://book.duxiu.com ），这里同时提供了新式阅读器（「书世界」）和旧式阅读器（「汇雅电子书」）的进入链接，**阁下进这个「汇雅电子书」的页面，就是本脚本能处理的页面了** 。
+![snipaste_20220529_132917](https://user-images.githubusercontent.com/74524914/170854051-955d4fcb-0d98-447b-9159-c5bcc2c5d65f.jpg)
+
+页面清晰度嘛自然是比不上原生电子版的……但是……又不是不能用对吧……(；´д｀)ゞ
+
 ## 优点
 1. 完整下载封面、版权页、前言页、目录页等，合成为完整的书籍PDF；
 2. 与官方pdz下载同等的最高画质；
