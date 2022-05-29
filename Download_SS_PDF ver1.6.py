@@ -184,7 +184,7 @@ def Compress(type_dict):
             # 二值化
             # blurred = cv2.GaussianBlur(img_cv, (1, 1), 0) #涂抹降噪，不想涂抹的话改成(1,1)
             gray=cv2.cvtColor(img_cv ,cv2.COLOR_BGR2GRAY)
-            binary = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 25, 20)
+            binary = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 51, 20)
             # cv2.imwrite("./RAW/cmpresd/%06d.png"%index,binary,[cv2.IMWRITE_PNG_BILEVEL, 1, int(cv2.IMWRITE_PNG_COMPRESSION),9])
             img_pil=Image.fromarray(binary)
             imgdata=img_pil.convert('1')
