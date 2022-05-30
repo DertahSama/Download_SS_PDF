@@ -6,6 +6,10 @@
 所以请使用者自重，若他人将该项目用于非法用途，本人概不负责。
 
 ## 环境与用法
+**新推出了点开即用的exe文件** ，降低使用门槛。exe点开之后可能会卡几秒，别急。
+
+（原来python打包exe这么简单，我以为会很复杂。但是代价就是打出来的包十分不精练……）
+
 环境为python 3.x，需要的模块如下：
 ```python
 import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2,glob
