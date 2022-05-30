@@ -10,19 +10,19 @@
 
 （原来python打包exe这么简单，我以为会很复杂。但是代价就是打出来的包十分不精练……）
 
-环境为python 3.x，需要的模块如下：
-```python
-import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2,glob
-from PyPDF2 import PdfFileReader,PdfFileWriter
-from PIL import Image
-from io import BytesIO
-```
-
-如果阁下是完全不会python的新人，要使用，只需下载一个Visual Studio Code，安装python扩展，然后打开python所在的目录（大概在\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\之类的地方），在Script文件夹上按住Shift地右键→在此处打开Powershell窗口，然后运行以下命令：
-```
-pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python glob
-```
-然后用VS code打开本脚本运行即可。
+>环境为python 3.x，需要的模块如下：
+>```python
+>import requests,time,os,shutil,img2pdf,sys,re,numpy,cv2,glob
+>from PyPDF2 import PdfFileReader,PdfFileWriter
+>from PIL import Image
+>from io import BytesIO
+>```
+>
+>如果阁下是完全不会python的新人，要使用，只需下载一个Visual Studio Code，安装python扩展，然后打开python所在的目录（大概在\Program Files (x86)\Microsoft Visual >Studio\Shared\Python39_64\之类的地方），在Script文件夹上按住Shift地右键→在此处打开Powershell窗口，然后运行以下命令：
+>```
+>pip3 install requests PyPDF2 Pillow img2pdf numpy opencv-python glob
+>```
+>然后用VS code打开本脚本运行即可。
 
 用法非常简单：只需在超星网页打开一本书，复制阅读界面的网址进命令行，回车，然后等它下载就可以了。
 ![snipaste_20220420_205402](https://user-images.githubusercontent.com/74524914/164235308-4b62c5e9-475e-4400-b53b-69bb32fad3c6.png)
