@@ -10,6 +10,7 @@
 # 2022年5月29日 14:49:29 ver1.6.2 更新了关于新式阅读器的报错说明
 # 2022年5月31日 20:45:54 ver1.7 输出的pdf页面宽度统一为18 cm，整齐点。另外为exe用户提供了更改参数的功能。
 
+from html import unescape
 import requests,time,os,shutil,img2pdf,sys,re,cv2,glob
 from PyPDF2 import PdfFileReader,PdfFileWriter
 from PIL import Image
@@ -39,7 +40,7 @@ def GetData():
         input("按任意键退出。")
     img_url_head="http://img.sslibrary.com"+jpgpath
 
-    bookname=re.search(r'"bookinfo".*>(.*)<',resp).group(1)
+    bookname=unescape(re.search(r'"bookinfo".*>(.*)<',resp).group(1))
 
     xmlpath=re.search(r'id="ztree" param="(.*)" ',resp).group(1)
     xmlurl=xmlpath.replace('/cat/cat2xml.dll?','http://path.sslibrary.com/cat/cat2xml.dll?')
@@ -165,7 +166,7 @@ def AddContents(pdf_file,type_dict,contents_xml):
     offset=sum(type_dict.values())-type_dict['000']   #xml里的页码是从正文开始的，所以与pdf页码有个偏移
     for match in re.finditer(r'id=.*?InsertPageNumber',contents_xml):   #提取一条目录数据
         index=re.search(r'id="(.*?)"',match.group()).group(1)
-        caption=re.search(r'Caption="(.*?)"',match.group()).group(1)
+        caption=unescape(re.search(r'Caption="(.*?)"',match.group()).group(1))
         pagenumber=re.search(r'PageNumber="(.*?)"',match.group()).group(1)
         pagenumber=int(pagenumber)+offset-1 #python里页码是从0开始的
 
